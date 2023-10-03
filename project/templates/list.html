@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>File list</title>
+    <!-- <link rel="shortcut icon" href="../listIcon.png" type="image/png"> -->
+    <link rel="stylesheet" href="static/list.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="table">
+        <div class="row header green">
+            <div class="cell">
+                FILE
+            </div>
+            <div class="cell">
+                SIZE
+            </div>
+            <div class="cell">
+                EXT
+            </div>
+            </div>
+
+          {% for items in range(arraySize) %}
+          <div class="row" style="overflow: hidden; text-overflow: ellipsis;">
+            <div class="cell" data-title={{extArray[items]}}>
+                <a href="/list/{{ array[items] }}" style="text-decoration: none; overflow: hidden; text-overflow: ellipsis;">{{ array[items] }}</a>
+            </div>
+            <div class="cell" data-title="Size">
+                {{fileSizeArray[items]}}
+              </div>
+              <div class="cell" data-title="Extension">
+                {{extArray[items]}}
+              </div>
+          </div>  
+            {% endfor %}
+      </div>
+    </div>
+    </div>
+    <div style="text-align: center;"><h1><a href="/" style="text-decoration:none;color:white;">Back</a></h1></div>
+</body>
+</html>

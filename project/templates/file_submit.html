@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload page</title>
-    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+    <title>File uploaded</title>
+    <!-- <link rel="shortcut icon" href="../successIcon.png" type="image/png"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/general.css">
-
+   <link rel="stylesheet" href="static/uploaded.css">
 </head>
 <body>
     <div class="row d-flex justify-content-center mt-100 height 90% width 90%">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h5>FILE UPLOAD</h5>
+                    <h5>FILE SUCCESSFULLY UPLOADED</h5>
+                    <span class="description">File name: {{filenamePage}}</span>
                     <br>
-                    <a href="list" class="uploaded">Uploaded files</a>
+                    <span class="description">Extension: {{extensionPage.upper()}}</span>
                 </div>
-                <div class="card-block"> 
-                    <form method=post enctype=multipart/form-data>
-                        <input type=file name=file>
-                        <br>
-                        <div class="text-center m-t-20"></div></div>
-                        <input type=submit value=Upload style="text-decoration: none;" class="btn-primary">
-                      </form>
+                <div class="text-left m-t-20">
+                    <a href="list" class="links">Uploaded files list</a>
+                    <a href="/" class="links">Upload another file</a>
                 </div>
             </div>
         </div>
